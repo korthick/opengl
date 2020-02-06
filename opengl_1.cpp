@@ -24,7 +24,7 @@ static unsigned int CompileShader(unsigned int type , const string& source)
 		char* message = (char *)alloca(length * sizeof(char));
 		glGetShaderInfoLog(id, length, &length, message);
 
-		cout << "failed to compile " << (type == GL_VERTEX_SHADER ? "vertex" : "shader") << "/n";
+		cout << "failed to compile " << (type == GL_VERTEX_SHADER ? "vertex" : "shader") << "\n";
 		cout << message; 
 
 		glDeleteShader(id);
@@ -64,7 +64,7 @@ int main(void)
 {
 	if (!glfwInit())
 	{
-		cout << "failed to intitialize opengl ! " << "/n";
+		cout << "failed to intitialize opengl ! " << "\n";
 	}
 	else
 	{
@@ -78,14 +78,14 @@ int main(void)
 
 		if (window == NULL)
 		{
-			cout << "cannot open window !" << "/n";
+			cout << "cannot open window !" << "\n";
 		}
 
 		glfwMakeContextCurrent(window);
 
 		if (glewInit() != GLEW_OK)
 		{
-			cout << "failded to initialize GLEW" << "/n";
+			cout << "failded to initialize GLEW" << "\n";
 		}
 
 		static const GLfloat vertices[] = {
